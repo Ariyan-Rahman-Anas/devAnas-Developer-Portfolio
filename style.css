@@ -60,13 +60,17 @@ nav ul li a{
 .banner{
     display: flex;
     align-items: center;
+    background-image: url(./images/developer.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+    background-color: #FFF8F3;
 }
-.left-img{
-    padding: 0 2.6rem;
-    width: 18%;
+.banner > .info{
+    margin: 0 1.5rem 0 6rem;
 }
-.left-img img{
-    width: 100%;
+.banner > div{
+    flex: 1;
 }
 .info h2{
     color: gray;
@@ -117,15 +121,16 @@ nav ul li a{
 .btn2 a{
     display: flex;
     font-size: 1rem !important;
+    justify-content: space-around;
     color: #FD6E0A;
     font-weight: 550;
     padding: .21rem 1.1rem;
     border-radius: .3rem;
 }
-.right-img{
-    width: 100rem;
+.banner .right-img{
+    width: 100vw;
 }
-.right-img img{
+.banner .right-img img{
     width: 100%;
 }
 /* =========== --- banner-section design ends here --- ============ */
@@ -138,7 +143,7 @@ main section{
     width: 90%;
     margin: 0 auto;
     margin-top: 8rem;
-    padding: 3rem;
+    padding: 5rem 1rem;
     text-align: center;
 }
 
@@ -150,8 +155,7 @@ main h1{
 }
 section .details{
     font-size: 1rem;
-    margin: 1.8rem 0;
-    color: red;
+    margin: 1rem 0;
     color: gray;
 }
 .short-address{
@@ -170,14 +174,14 @@ section .details{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 .js, .react, .node, .mongo{
     background-color: white;
     border-radius: .3rem;
     width: 15rem ;
     box-shadow: 3px 3px 4px lightgray;
-    margin: .8rem 0;
+    margin: .8rem 1rem;
     padding: 1rem;
 }
 /* =========== --- what-I-do-section design ends here --- ============ */
@@ -243,7 +247,10 @@ section button img{
 }
 /* =========== --- resume-summary-section design ends here --- ============ */
 
-/* =========== --- about-section design start from here --- ============ */
+/* =========== --- contact-section design start from here --- ============ */
+.right-sec-contact, .left-sec-contact{
+    padding: 0 5rem;
+}
 .social-icons{
     display: flex;
     align-items: center;
@@ -271,7 +278,8 @@ section button img{
     margin: 0 0 2rem 0;
 }
 form{
-    margin-top: 1rem;
+    margin-top: .6rem;
+    width: 100%;
 }
 form input{
     height: 3rem;
@@ -283,7 +291,7 @@ form input, textarea{
     outline: none;
     padding: .5rem;
     margin: .5rem 0;
-    width: 22rem;
+    width: 100%;
 }
 form button{
     margin-top: .5rem ;
@@ -300,7 +308,7 @@ section:last-of-type{
     width: 22rem;
     display: flex;
 }
-/* =========== --- about-section design ends from here --- ============ */
+/* =========== --- contact-section design ends from here --- ============ */
 
 /* =========== --- footer-section design starts from here --- ============ */
 footer{
@@ -309,6 +317,131 @@ footer{
     width: 90%;
     margin: 0 auto;
     color: gray;
-    padding: .15rem 0;
+    padding: 5rem 0 .3rem 0;
 }
 /* =========== --- footer-section design ends from here --- ============ */
+
+
+/* ==============---- media query starts from here ---============== */
+
+/* ===================--- for mobile devices ---================== */
+@media only screen and (max-width:576px){
+    /* =========--- nav section ---=============== */
+    nav{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    nav ul li{
+        display: block;
+    }
+    /* =========--- banner section ---=============== */
+    .banner{
+        flex-direction: column-reverse;
+    }
+    /* =========--- about us section ---=============== */
+    .short-address{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .short-address div{
+        width: 50%;
+        margin: .3rem .5rem .3rem .5rem;
+        padding: .5rem 0;
+        text-align: left;
+    }
+    /* =========--- what i do section ---=============== */
+    .work-card{
+        flex-direction: column;
+    }
+    /* =========--- resume-summary section ---=============== */
+    .resume-section{
+        flex-direction: column;
+    }
+    .left-sec, .right-sec{
+        width: 100%;
+        padding:0 1rem;
+    }
+    .resume-header::after{
+        left: 1rem;
+    }
+    /* =========--- contact section ---=============== */
+    .right-sec-contact, .left-sec-contact{
+        padding:  1rem 0;
+    }
+    #contact .form{
+        flex-direction: column;
+    }
+    form input, textarea{
+        width: 90%;
+    }
+        form button[type="submit"]{
+        margin-left: 8rem;
+    }
+    .form-btn{
+        flex-direction: column;
+    }
+    .form-btn button{
+        display: block;
+    }
+
+}
+
+/* =========--- tablet devices ---============ */
+@media only screen and (min-width:576px) and (max-width:992px){
+/* =========--- banner section ---=============== */
+    .banner{
+        flex-direction: column-reverse;
+    }
+    /* =========--- about us section ---=============== */
+    .short-address{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .short-address div{
+        width: 50%;
+        margin: .3rem .5rem .3rem .5rem;
+        padding: .5rem 0;
+        text-align: left;
+    }
+    /* =========--- what i do section ---=============== */
+    .work-card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .js, .react, .node, .mongo{
+        width: 14rem;
+    }
+    /* =========--- resume-summary i do section ---=============== */
+    .resume-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .left-sec, .right-sec{
+        width: 100%;
+        padding:0 1rem;
+    }
+    .resume-header::after{
+        left: 1rem;
+    }
+    /* =========--- contact section ---=============== */
+    .right-sec-contact, .left-sec-contact{
+        padding:  1rem 0;
+    }
+    #contact .form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    form input, textarea{
+        width: 90%;
+    }
+        form button[type="submit"]{
+        margin-left: 8rem;
+    }
+    .form-btn{
+        flex-direction: column;
+    }
+    .form-btn button{
+        display: block;
+    }
+}
